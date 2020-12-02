@@ -29,15 +29,15 @@ Kubeflow라는 이름과 같이 머신러닝 workflow를 kubernetes에서 쉽게
 *천리길도 한걸음부터*
 <br/>
 PC에 설치할 수도 있겠지만 성능 문제로 [Google Cloud 문서](https://cloud.google.com/ai-platform/pipelines/docs/getting-started)를 따라간다.
-
 <br/>
+
 **1. Google Cloud 사용**
 <br/>
 Google Cloud에 Kubeflow가 동작할 환경을 만들어주자. 첫 사용자에게 몇개월간 300$의 크레딧을 지원해줘 무료로 사용 가능하다.  
 <p align="center"><image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치1.png" height="30%"></p>
 <p align="center"><i> Trail 기간과 credit을 다 써서 결제 해야한다...</i></p>
-
 <br/>
+
 **2. AI Platform 파이프라인 인스턴스 설정**
 <br/>
 <br/>
@@ -114,8 +114,8 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
  </div>
 </div>
 이제 익숙한 노트북 환경이 보인다!  
-
 <br/>
+
 **4. Kubeflow로 이전하기**
 <br/>
 [여기](https://medium.com/google-cloud-apac/gcp-ai-platform-%EC%97%90%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-kubeflow-pipelines-%EA%B8%B0%EB%B0%98-ml-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EC%98%88%EC%A0%9C-part-2-3-22b597f8d127)를 따라간다.  
@@ -140,8 +140,8 @@ Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테�
     !tar zcvf titanic_train.tar.gz *  
     !gsutil cp titanic_train.tar.gz $AIPJOB_TRAINER_GCS_PATH
 <p align="center"><i>열심히 따라해보자</i></p>
-
 <br/>
+
 **5.  Kubeflow Pipeline 구성 코드 작성**
 <br/>
 [여기](https://medium.com/google-cloud-apac/gcp-ai-platform-%EC%97%90%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-kubeflow-pipelines-%EA%B8%B0%EB%B0%98-ml-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EC%98%88%EC%A0%9C-part-3-3-87ff52f8507a)를 따라간다  
