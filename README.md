@@ -9,7 +9,7 @@
 <p align="center">
 <image src="https://www.sciencetimes.co.kr/wp-content/uploads/2020/03/thumb_400.jpg" width="50%">
 </p>
-<center><i>딥러닝은 좀 알겠는데...</i></center>
+<p align="center"><i>딥러닝은 좀 알겠는데...</i></p>
 
 하지만 위 프로젝트들은 생성된 모델은 아무리 성능이 좋아도 치명적인 단점들이 있다. 데이터 셋이 변하면 작동하지 않는 것, 모델 확장이 어렵다는 것. 특히 실시간으로 변하는 데이터를 다루면 매번 모델을 재학습시켜 교체하는 것은 불가능 할 것이다.*(ex youtube...)* 실무에서 요구하는 변경과 통합에 유연하게 대처 가능한 pipeline이 필요한 것이다.
 
@@ -35,7 +35,7 @@ PC에 설치할 수도 있겠지만 성능 문제로 [Google Cloud 문서](https
 1. Google Cloud 사용
 Google Cloud에 Kubeflow가 동작할 환경을 만들어주자. 첫 사용자에게 몇개월간 300$의 크레딧을 지원해줘 무료로 사용 가능하다.
 
-<image src="설치1" height="">
+<image src="/image/설치1" height="30%">
 <center><i> Trail 기간과 credit을 다 써서 결제 해야한다...</i></center>
 
 2. AI Platform 파이프라인 인스턴스 설정
