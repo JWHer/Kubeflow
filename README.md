@@ -28,7 +28,7 @@ Kubeflow라는 이름과 같이 머신러닝 workflow를 kubernetes에서 쉽게
 
 ## 3. 직접 해보기
 *천리길도 한걸음부터*
-<br/><br/><br/>
+<br/>
 
 PC에 설치할 수도 있겠지만 성능 문제로 [Google Cloud 문서](https://cloud.google.com/ai-platform/pipelines/docs/getting-started)를 따라간다.
 <br/><br/><br/>
@@ -47,31 +47,30 @@ Google Cloud에 Kubeflow가 동작할 환경을 만들어주자. 첫 사용자�
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치2.png" height="30%">
 Google Cloud Console에서 AI Platform 파이프라인을 연다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치3.png" height="30%">
 사용할 Google Cloud 프로젝트를 선택한 다음 열기를 클릭한다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
  
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치4.png" height="30%">
 AI Platform Pipelines 툴바에서 새 인스턴스를 클릭한다. Google Cloud Marketplace에서 Kuberflow Piplelines가 열린다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
  
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치5.png" height="30%">
 구성을 클릭한다. 배포 구성 양식이 열린다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
  
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치6.png" height="30%">
  
 *올 초에 드디어 한국에도 Cloud 서버가 생겼다*  
 클러스터 영역을 설정하고, 다음 Cloud API에 대한  엑세스 허용을 선택한다. 이후 클러스터 만들기를 클릭한다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
   
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치7.png" height="30%">
 
 *이름은 원하는대로 지었다. 잘 기억해두자.*  
 클러스터를 만든 후 네임스페이스(default)와 앱 인스턴스 이름을 제공한다. 이후 배포를 누른다.  
-<br/>
  
 <br/>  
 <br/>  
@@ -84,33 +83,33 @@ AI Platform Pipelines 툴바에서 새 인스턴스를 클릭한다. Google Clou
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/저장소1.png" height="30%">
 AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버킷이 생성된다. 이름을 클릭한다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/저장소2.png" height="30%">
 필요한 데이터를 업로드한다.  
-<br/><br/><br/>
-
-<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북1.png" height="30%">
-기존에 작성했던 노트북 코드를 옮길 것이다. 또한, Jupyter를 사용하면 다른 장점도 많다.(물론 단점도 있겠지만...)  
-<br/><br/><br/>
-
-<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북2.png" height="30%">
-메모장 인스턴스를 생성해 준다. 무료 체험도 끝났고 돈이 없기때문에... 가장 저렴한 머신을 사용한다. 이전에 노트북을 사용했던 이유도 [colab](https://colab.research.google.com/) 환경에서 무료로 작업했기 때문이다. (아직 머신러닝 기초를 공부하는 단계면 추천한다.)  
-<br/><br/><br/>
-
-<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북3.png" height="30%">
-마저 continue를 눌러 완료하자.  
-<br/><br/><br/>
-
-<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북4.png" width="40%"> <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북5.png" width="40%">
-이제 익숙한 노트북 환경이 보인다!  
-<br/>
+<br/><br/><br/><br/>
 
 **4. Kubeflow로 이전하기**
 <br/>
 
 [여기](https://medium.com/google-cloud-apac/gcp-ai-platform-%EC%97%90%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-kubeflow-pipelines-%EA%B8%B0%EB%B0%98-ml-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EC%98%88%EC%A0%9C-part-2-3-22b597f8d127)를 따라간다.  
 <br/>
+
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북1.png" height="30%">
+기존에 작성했던 노트북 코드를 옮길 것이다. 따라서 TF 2.1 노트북으로 작업하자. 또한, Jupyter는 단위 실행으로 테스팅과 익숙하다는 장점이 있다.(물론 단점도 있겠지만...)  
+<br/><br/><br/><br/>
+
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북2.png" height="30%">
+메모장 인스턴스를 생성해 준다. 무료 체험도 끝났고 돈이 없기때문에... 가장 저렴한 머신을 사용한다. 이전에 노트북을 사용했던 이유도 [colab환경](https://colab.research.google.com)에서 고성능의 클라우드 컴퓨팅을 무료로 작업할 수 있었기 때문이다. (아직 머신러닝 기초를 공부하는 단계면 추천한다.)  
+<br/><br/><br/><br/>
+
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북3.png" height="30%">
+마저 continue를 눌러 완료하자.  
+<br/><br/><br/><br/>
+
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북4.png" width="40%"> <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북5.png" width="40%">
+이제 익숙한 노트북 환경이 보인다!  
+<br/><br/><br/><br/>
 
 모델은 전처리, 학습, 배포의 단계로 나눌 수 있다. 하지만 [이전 프로젝트](https://github.com/JWHer)의 데이터셋은 이미 처리되었기 때문에 전처리 단계는 생략한다. 전처리된 데이터를 Cloud Storage에서 다운받아 학습한다. 정확도가 더 높아진 경우 생성된 모델을 다시 Cloud Storage에 업로드하게 된다.  
 <br/>
@@ -119,14 +118,14 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 
 *코드는 리팩토링이 좀 필요할듯...*  
 코드는 똑같다. 단지 저장 위치 Cloud Storage가 되도록 수정해 주었다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북7.png" height="30%">
 Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테스트 해 보았다.  
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 클라우드 상에서 학습을 할 때 **패키지를 읽어** 수행하게 된다. 따라서 패키기를 만들기 위해 setup.py 생성, 압축, 업로드 작업이 필요하다.  
-<br/><br/><br/>
+<br/>
  
     !rm -fr titanic_train.tar.gz  
     !tar zcvf titanic_train.tar.gz *  
@@ -299,13 +298,13 @@ Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테�
 <br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험1.png" width="80%">
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험2.png" width="80%">
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험3.png" width="80%">
-<br/><br/><br/>
+<br/><br/><br/><br/>
 
 
 ## 참고 사이트
