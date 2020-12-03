@@ -1,5 +1,5 @@
 # Kubeflow 파이프라인 사용해보기
-이 프로젝트는 [IMDb 문맥분석 프로젝트](https://github.com/JWHer/BERT)의 파이프라인화 과정을 다룬다. Deep Learning, Google Cloud, Kubernetes에 대한 이해가 있어야 한다.
+이 프로젝트는 [IMSDB 문맥분석 프로젝트](https://github.com/JWHer/BERT)의 파이프라인화 과정을 다룬다. Deep Learning, Google Cloud, Kubernetes에 대한 이해가 있어야 한다.
 
 ## 1. Pipeline이 왜 필요한데?
 *딥러닝은 수학 이론과 학습 모델만 알면 되는거 아니야?*
