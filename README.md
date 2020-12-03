@@ -98,8 +98,9 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 [여기](https://medium.com/google-cloud-apac/gcp-ai-platform-%EC%97%90%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-kubeflow-pipelines-%EA%B8%B0%EB%B0%98-ml-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EC%98%88%EC%A0%9C-part-2-3-22b597f8d127)를 따라간다.  
 <br/>
 
-<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북1.png" height="30%">
-기존에 작성했던 노트북 코드를 옮길 것이다. 따라서 TF 2.1 노트북으로 작업하자. 또한, Jupyter는 단위 실행으로 테스팅과 익숙하다는 장점이 있다.(ML은 거의다 Jupyter를 쓰는 것 같다.)  
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북1.png" height="30%">  
+ 
+기존에 작성했던 [torch 코드](https://github.com/JWHer/BERT/blob/main/imsdb/BERT_torch.py)를 옮길 것이다. 따라서 TF 2.1 노트북으로 작업하자. 또한, Jupyter는 단위 실행으로 테스팅과 익숙하다는 장점이 있다.(ML은 거의다 Jupyter를 쓰는 것 같다.)  
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북2.png" height="30%">
@@ -116,7 +117,7 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 이제 익숙한 노트북 환경이 보인다!  
 <br/><br/><br/><br/>
 
-모델은 전처리, 학습, 배포의 단계로 나눌 수 있다. 하지만 [이전 프로젝트](https://github.com/JWHer)의 데이터셋은 이미 처리되었기 때문에 전처리 단계는 생략한다. 전처리된 데이터를 Cloud Storage에서 다운받아 학습한다. 정확도가 더 높아진 경우 생성된 모델을 다시 Cloud Storage에 업로드하게 된다.  
+모델은 전처리, 학습, 배포의 단계로 나눌 수 있다. 하지만 [이전 프로젝트](https://github.com/JWHer)의 [데이터셋](https://github.com/JWHer/BERT/tree/main/imsdb)은 이미 [처리](https://github.com/JWHer/BERT/blob/main/imsdb/preprocess.py)되었기 때문에 전처리 단계는 생략한다. 전처리된 데이터를 Cloud Storage에서 다운받아 학습한다. 정확도가 더 높아진 경우 생성된 모델을 다시 Cloud Storage에 업로드하게 된다.  
 <br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북6.png" height="30%">
