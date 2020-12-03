@@ -17,7 +17,9 @@
 *Kubeflow 참 직관적인 이름이다.*  
 <br/>
 
-Kubeflow라는 이름과 같이 머신러닝 workflow를 kubernetes에서 쉽게 배포할 수 있게 만드는 것이다. [Kubeflow 공식 documentation](https://www.kubeflow.org/docs/about/kubeflow/)에서 3가지 목표를 든다.
+![introduction to Kubeflow](https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/Introduction_to_Kubeflow.gif)  
+*공식 영상 캡처 https://youtu.be/cTZArDgbIWw*  
+Kubeflow라는 이름과 같이 머신러닝 workflow를 kubernetes에 쉽게 배포할 수 있게 만드는 것이다. [Kubeflow 공식 documentation](https://www.kubeflow.org/docs/about/kubeflow/)에서 3가지 목표를 든다.
 
  - 쉽고, 반복가능하고, 이식하기 쉬운 배포 기반제공.
  - 느슨한 결합으로 소규모 서비스 배포와 관리
