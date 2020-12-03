@@ -121,7 +121,7 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북6.png" height="30%">
 
 *코드는 리팩토링이 좀 필요할듯...*  
-코드는 똑같다. 단지 저장 위치 Cloud Storage가 되도록 수정해 주었다.  
+코드는 똑같다. 단지 저장 위치를 Cloud Storage가 되도록 수정해 주었다.  
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북7.png" height="30%">
