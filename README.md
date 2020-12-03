@@ -99,7 +99,7 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 <br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북1.png" height="30%">
-기존에 작성했던 노트북 코드를 옮길 것이다. 따라서 TF 2.1 노트북으로 작업하자. 또한, Jupyter는 단위 실행으로 테스팅과 익숙하다는 장점이 있다.(물론 단점도 있겠지만...)  
+기존에 작성했던 노트북 코드를 옮길 것이다. 따라서 TF 2.1 노트북으로 작업하자. 또한, Jupyter는 단위 실행으로 테스팅과 익숙하다는 장점이 있다.(ML은 거의다 Jupyter를 쓰는 것 같다.)  
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북2.png" height="30%">
