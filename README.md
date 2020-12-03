@@ -1,5 +1,5 @@
 # Kubeflow 파이프라인 사용해보기
-이 프로젝트는 [SimpleTransformer를 사용한 문맥분석 프로젝트](https://github.com/JWHer)의 파이프라인화 과정을 다룬다. Deep Learning, Google Cloud, Kubernetes에 대한 이해가 있어야 한다.
+이 프로젝트는 [IMDb 문맥분석 프로젝트](https://github.com/JWHer/BERT)의 파이프라인화 과정을 다룬다. Deep Learning, Google Cloud, Kubernetes에 대한 이해가 있어야 한다.
 
 ## 1. Pipeline이 왜 필요한데?
 *딥러닝은 수학 이론과 학습 모델만 알면 되는거 아니야?*
@@ -377,7 +377,7 @@ Logs를 눌러 어떻게 실행되었는지 확인할 수 있다.
 
 하루정도 사용했는데 클라우드 비용이 꽤 나와서 정지할 수 밖에 없었다...  
 
-기회가 되면 계속 업데이트되는 Livedata를 사용한 파이프라인도 만들어 보고 싶다.  
+기회가 되면 클라우드 배포 모델을 접근할 수 있는 REST API를 만들어 주고 싶다.
 
 ## 참고 사이트
 [1] https://medium.com/daangn/kubeflow-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%9A%B4%EC%9A%A9%ED%95%98%EA%B8%B0-6c6d7bc98c30
