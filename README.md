@@ -32,7 +32,8 @@ Kubeflow라는 이름과 같이 머신러닝 workflow를 kubernetes에 쉽게 �
 *천리길도 한걸음부터*
 <br/>
 
-PC에 설치할 수도 있겠지만 성능 문제로 [Google Cloud 문서](https://cloud.google.com/ai-platform/pipelines/docs/getting-started)를 따라간다.
+PC에 설치할 수도 있겠지만 성능 문제로 [Google Cloud 문서](https://cloud.google.com/ai-platform/pipelines/docs/getting-started)를 따라간다.  
+Cloud 환경이 필요 없다면 4번 항목부터 보자.
 <br/><br/><br/>
 
 **1. Google Cloud 사용**
@@ -67,18 +68,13 @@ AI Platform Pipelines 툴바에서 새 인스턴스를 클릭한다. Google Clou
  
 *올 초에 드디어 한국에도 Cloud 서버가 생겼다*  
 클러스터 영역을 설정하고, 다음 Cloud API에 대한  엑세스 허용을 선택한다. 이후 클러스터 만들기를 클릭한다.  
-<br/><br/><br/><br/>
-  
+<br/><br/><br/>
+
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/설치7.png" height="30%">
 
 *이름은 원하는대로 지었다. 잘 기억해두자.*  
 클러스터를 만든 후 네임스페이스(default)와 앱 인스턴스 이름을 제공한다. 이후 배포를 누른다.  
- 
-<br/>  
-<br/>  
-<p align="center"><i>이쯤에서 쉬어가는 게 좋을 것이라고 생각한다...</i></p>
-<br/>  
-<br/>  
+<br/><br/><br/><br/>
 
 **3. Cloud Storage에 작업 bucket 생성 및 데이터 업로드**
 <br/>
@@ -91,7 +87,12 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 필요한 데이터를 업로드한다.  
 <br/><br/><br/><br/>
 
-**4. Kubeflow로 이전하기**
+<p align="center"><i>이쯤에서 쉬어가는 게 좋을 것이라고 생각한다...</i></p>
+<br/>  
+<br/>  
+
+**4. Kubeflow로 이전하기**  
+*여기부터가 핵심이다.*  
 <br/>
 
 [여기](https://medium.com/google-cloud-apac/gcp-ai-platform-%EC%97%90%EC%84%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-kubeflow-pipelines-%EA%B8%B0%EB%B0%98-ml-%ED%95%99%EC%8A%B5-%EB%B0%8F-%EB%B0%B0%ED%8F%AC-%EC%98%88%EC%A0%9C-part-2-3-22b597f8d127)를 따라간다.  
@@ -130,9 +131,9 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
  
 *무수히 많은 시도 끝에...*  
 Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테스트 해 보았다.  
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
-클라우드 상에서 학습을 할 때 **패키지를 읽어** 수행하게 된다. 따라서 패키기를 만들기 위해 setup.py 생성, 압축, 업로드 작업이 필요하다.  
+Kubeflow는 **패키지를 읽어** 학습을 수행하게 된다. 따라서 패키기를 만들기 위해 setup.py 생성, 압축, 업로드 작업이 필요하다.  
  
     !rm -fr titanic_train.tar.gz  
     !tar zcvf titanic_train.tar.gz *  
@@ -301,18 +302,82 @@ Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테�
 </div>
 </details>
 
+Kubeflow Pipelines(KFP) SDK를 사용하면 필요한 yaml 파일을 생성해 준다.  
+노트북에 kfp_pipline.ipynb를 생성해 주자.
+<br/><br/><br/>
+
+    #!pip3 install -U kfp
+    import kfp
+    import kfp.components as comp
+    from kfp import dsl
+    from kfp import compiler
+    from kfp.components import func_to_container_op
+    import time
+    import datetime
+필요한 모듈을 import 해주자. kfp 모듈이 없으면 첫째줄의 주석을 해제하고 설치해줘야 한다.  
+<br/><br/><br/>
+   
+    PIPELINE_HOST = “55b5c3378a14c1c1-dot-us-west1.pipelines.googleusercontent.com”
+    WORK_BUCKET = “gs://aiplatformdemo-kubeflowpipelines-default”
+    EXPERIMENT_NAME = “Titanic Draft Experiment”
+PIPELINE_HOST는 cloud에 생성한 kubeflow pipeline host를 입력해주자.(브라우저 url을 보자)  
+버켓도 마찬가지로 cloud storage의 버킷 위치를 입력한다.  
+이름은 적절히 지어주자.  
+<br/><br/><br/>
+
+    @dsl.pipeline(
+     name=”titanic-kubeflow-pipeline-demo”,
+     description = “Titanic Kubeflow Pipelines demo embrassing AI Platform in Google Cloud”
+    )
+    def titanic_pipeline(...): ...  
+파이프라인을 생성해주는 함수이다.  
+천천히 읽어보면 어렵지 않게 무슨 일을 하는지 알 수 있다.  
+<br/><br/><br/>
+
+    args={ ... }
+    
+    client.create_run_from_pipeline_func(
+     titianic_pipeline,
+     arguments=args,
+     experiment_name=EXPERIMENT_NAME
+    )  
+클라우드 상에 학습, 배포를 해주는 함수이다.  
+<br/><br/><br/>
+
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북10.png" height="30%">  
+ 
+실행하면 이렇게 Kubeflow Experiment details로 이동하는 링크가 출력된다.  
+<br/><br/><br/>
+
 **6. Kubeflow cluster로 보기**
 <br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험1.png" width="80%">
-<br/><br/><br/><br/>
+ 
+출력된 링크를 클릭하거나 Experiments 탭을 누르면 EXPERIMENT_NAME으로 지정한 실험을 확인할 수 있다.
+<br/><br/><br/>
+
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험2.png" width="80%">
-<br/><br/><br/><br/>
+ 
+누르면 Runs 기록이 출력된다.
+<br/><br/><br/>
+
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/실험3.png" width="80%">
+ 
+클릭하면 Graph로 Visualize된 파이프라인이 보인다!  
+Logs를 눌러 어떻게 실행되었는지 확인할 수 있다.  
 <br/><br/><br/><br/>
 
+## 4. 결론?  
+*여기까지 오다니 대단하군...*  
+
+기존 코드를 Cloud 환경에 맞게 패키징하여 Kubeflow로 실행해 보았다.  
+
+하루정도 사용했는데 클라우드 비용이 꽤 나와서 정지할 수 밖에 없었다...  
+
+기회가 되면 계속 업데이트되는 Livedata를 사용한 파이프라인도 만들어 보고 싶다.  
 
 ## 참고 사이트
 [1] https://medium.com/daangn/kubeflow-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%9A%B4%EC%9A%A9%ED%95%98%EA%B8%B0-6c6d7bc98c30
