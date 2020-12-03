@@ -134,7 +134,7 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테스트 해 보았다.  
 <br/><br/><br/>
 
-Kubeflow는 **패키지를 읽어** 학습을 수행하게 된다. 따라서 패키기를 만들기 위해 setup.py 생성, 압축, 업로드 작업이 필요하다.  
+Kubeflow는 **패키지를 읽어** 학습을 수행하게 된다. 따라서 패키지를 만들기 위해 setup.py 생성, 압축, 업로드 작업이 필요하다.  
  
     !rm -fr titanic_train.tar.gz  
     !tar zcvf titanic_train.tar.gz *  
