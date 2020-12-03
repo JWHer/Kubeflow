@@ -100,7 +100,8 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북2.png" height="30%">
-메모장 인스턴스를 생성해 준다. 무료 체험도 끝났고 돈이 없기때문에... 가장 저렴한 머신을 사용한다. 이전에 노트북을 사용했던 이유도 [colab](https://colab.research.google.com)환경에서 고성능의 클라우드 컴퓨팅을 무료로 작업할 수 있었기 때문이다. (아직 머신러닝 기초를 공부하는 단계면 추천한다.)  
+ 
+메모장 인스턴스를 생성해 준다. 무료 체험도 끝났고 돈이 없기때문에... 가장 저렴한 머신을 사용한다. 이전에 노트북을 사용했던 이유도 [Colab](https://colab.research.google.com)환경에서 고성능의 클라우드 컴퓨팅을 무료로 작업할 수 있었기 때문이다. (아직 머신러닝 기초를 공부하는 단계면 추천한다.)  
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북3.png" height="30%">
@@ -122,6 +123,10 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북7.png" height="30%">
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북8.png" height="30%">
+<image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북9.png" height="30%">
+ 
+*무수히 많은 시도 끝에...*  
 Dokerfile을 생성해준다. pipeline.ipynb에서 실행이 잘 되는지 테스트 해 보았다.  
 <br/><br/><br/><br/>
 
