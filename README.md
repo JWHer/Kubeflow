@@ -123,7 +123,7 @@ AI Platform Pipelines를 설치하면 Google Cloud Storage 에 자동으로 버�
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북6.png" height="30%">
 
 *코드는 리팩토링이 좀 필요할듯...*  
-코드는 똑같다. 단지 저장 위치를 Cloud Storage가 되도록 수정해 주었다.  
+[코드](https://github.com/JWHer/Kubeflow/blob/main/train/train.py)는 똑같다. 단지 저장 위치를 Cloud Storage가 되도록 수정해 주었다.  
 <br/><br/><br/><br/>
 
 <image src="https://raw.githubusercontent.com/JWHer/Kubeflow/main/image/노트북7.png" height="30%">
@@ -302,6 +302,8 @@ Kubeflow는 **패키지를 읽어** 학습을 수행하게 된다. 따라서 패
     )
 </div>
 </details>
+
+[작성한 소스](https://github.com/JWHer/Kubeflow/blob/main/kfp_pipline.ipynb) 파라미터와 파이프라인 구성에 필요 없는 부분을 지웠다.
 
 Kubeflow Pipelines(KFP) SDK를 사용하면 필요한 yaml 파일을 생성해 준다.  
 노트북에 kfp_pipline.ipynb를 생성해 주자.
