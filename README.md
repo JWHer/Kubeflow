@@ -4,7 +4,7 @@
 ## 1. Pipeline이 왜 필요한데?
 *딥러닝은 수학 이론과 학습 모델만 알면 되는거 아니야?*
 
-2016년 알파고 등장 후 대중에 떠오르는 딥러닝에 대해 이론과 기초적인 모델에 대해 공부했다. 개인 프로젝트와 연구를 하며 이런저런 시행착오를 겪으면서 CNN모델과 BERT모델을 만들며 모델 생성에는 자신감이 생겼다.
+2016년 알파고 등장 후 대중에 떠오르는 딥러닝에 대해 이론과 기초적인 모델에 대해 공부했다. 개인 프로젝트와 연구를 하며 이런저런 시행착오를 겪으면서 [CNN모델](https://github.com/JWHer/Malware_CNN_Learning)과 [BERT모델](https://github.com/JWHer/BERT)을 만들며 모델 생성에는 자신감이 생겼다.
 
 
 <p align="center"><image src="https://www.sciencetimes.co.kr/wp-content/uploads/2020/03/thumb_400.jpg" width="50%"></p>
